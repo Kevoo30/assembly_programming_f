@@ -1,20 +1,18 @@
 section .data
-    num1   db 120;
-    num2   db 10;
-    result db 0;
+    numbers dd 10, 20, 30, 40, 50
 
 section .text
     global _start
 
 _start:
-;  add [num1],[num2]
-    mov al, [num1]
-    add al, [num2]
-    mov [result], al
+    mov ebx, numbers
+    mov esi, 4
 
-    jmp n_break
+    mov eax, [ebx + esi]
+
+    mov ecx, eax
 
 n_break:
     mov eax, 1
-    xor ebx,ebx
+    xor ebx, ebx
     int 0x80
