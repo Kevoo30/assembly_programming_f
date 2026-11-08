@@ -1,0 +1,2 @@
+Hello from NASM file reading.
+This is my input file.
